@@ -1,0 +1,38 @@
+EXAMPLES:
+
+CREATE TABLE Footballers (name varchar, surname varchar, nationality varchar, age int);
+INSERT INTO Footballers VALUES ('Lionel', 'Messi', 'Argentina', '36'), ('Neymar', 'Jr.', 'Brasil', '31'), ('Robert', 'Lewandowski', 'Poland', '35'), ('Cristiano', 'Ronaldo', 'Portugal', '38');
+DELETE FROM Footballers WHERE name = 'Lionel';
+UPDATE Footballers SET name = 'Karol' WHERE age = '36';
+UPDATE Footballers SET name = 'Karol', surname = 'Fajny' WHERE nationality = 'Brasil';
+DELETE FROM Footballers;
+
+--------------------------------------------------------------------------------------------------------
+
+CREATE TABLE Orders (OrderID int, CustomerID int, OrderDate date);
+INSERT INTO Orders VALUES ('10308', '2', '1996-09-18'), ('10309', '3', '1996-09-19'), ('10310', '1', '1996-09-20');
+
+CREATE TABLE Customers (CustomerID int, CustomerName varchar, ContactName varchar, Country varchar);
+INSERT INTO Customers VALUES ('1', 'Alfreds', 'Maria', 'Germany'), ('2', 'Ana Trujillo', 'Ana Trujillo', 'Mexico'), ('3', 'Antonio Moreno', 'Antonio Moreno', 'Mexico');
+
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+
+--------------------------------------------------------------------------------------------------------
+
+CREATE TABLE Products (ProductID int, ProductName varchar, CategoryID int, Price int);
+INSERT INTO Products VALUES ('1', 'Chais', '1', '18'), ('2', 'Chang', '1', '19'), ('3', 'Aniseed Syrup', '2', '20');
+
+CREATE TABLE Categories (CategoryID int, CategoryName varchar, Description varchar);
+INSERT INTO Categories VALUES ('1', 'Beverages', 'Soft drinks'), ('2', 'Condiments', 'Sweet sauces'), ('3', 'Confections', 'Desserts');
+
+SELECT Products.ProductID, Products.ProductName, Categories.CategoryName FROM Products INNER JOIN Categories ON Products.CategoryID = Categories.CategoryID;
+
+--------------------------------------------------------------------------------------------------------
+
+PATTERNS:
+
+CREATE TABLE  ();
+INSERT INTO  VALUES ();
+SHOW TABLES;
+SELECT  FROM ;
+DELETE FROM ;
